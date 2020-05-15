@@ -9,5 +9,6 @@ RUN cat /etc/nginx/conf.d/default.conf && \
     ls -lh /usr/share/nginx/html/node-sass/v4.12.0 && \
     wget -P /usr/share/nginx/html https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.7/rocketchat-setup-2.17.7.exe && \
     wget -P /usr/share/nginx/html https://aka.ms/win32-x64-user-stable && \
+    mv /usr/share/nginx/html/win32-x64-user-stable /usr/share/nginx/html/win32-x64-user-stable.exe
     ls -lh /usr/share/nginx/html
 
