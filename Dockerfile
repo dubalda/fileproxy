@@ -11,5 +11,10 @@ RUN cat /etc/nginx/conf.d/default.conf && \
     mkdir -p /usr/share/nginx/html/vscode && \
     wget -P /usr/share/nginx/html/vscode/ https://aka.ms/win32-x64-user-stable && \
     mv /usr/share/nginx/html/vscode/win32-x64-user-stable /usr/share/nginx/html/vscode/win32-x64-user-stable.exe && \
+    mkdir -p /usr/share/nginx/html/newman-html-extra && \
+    wget -P /usr/share/nginx/html/newman-html-extra https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css && \
+    wget -P /usr/share/nginx/html/newman-html-extra https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css && \
+    wget -P /usr/share/nginx/html/newman-html-extra https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github-gist.min.css && \
+    wget -P /usr/share/nginx/html/newman-html-extra https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css && \
     ls -lh /usr/share/nginx/html
 
