@@ -4,6 +4,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
+    mkdir -p /usr/share/nginx/html/idea && \
+    wget -P /usr/share/nginx/html/idea https://download.jetbrains.com/idea/ideaIU-2020.1.2.exe && \ 
+    ls -lh /usr/share/nginx/html/idea && \
     mkdir -p /usr/share/nginx/html/node-sass/v4.11.0 && \
     wget -P /usr/share/nginx/html/node-sass/v4.11.0 https://github.com/sass/node-sass/releases/download/v4.11.0/linux-x64-64_binding.node && \ 
     ls -lh /usr/share/nginx/html/node-sass/v4.11.0 && \
