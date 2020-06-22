@@ -4,6 +4,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
+    mkdir -p /usr/share/nginx/html/node && \
+    wget -P /usr/share/nginx/html/node https://nodejs.org/dist/v12.18.1/node-v12.18.1-win-x64.zip && \ 
+    ls -lh /usr/share/nginx/html/node && \
     mkdir -p /usr/share/nginx/html/idea && \
     wget -P /usr/share/nginx/html/idea https://download.jetbrains.com/idea/ideaIU-2020.1.2.exe && \ 
     wget -P /usr/share/nginx/html/idea https://plugins.jetbrains.com/files/6317/83653/lombok-plugin-0.30-2020.1.zip && \ 
