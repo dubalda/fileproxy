@@ -4,6 +4,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
+    mkdir -p /usr/share/nginx/html/gradle && \
+    wget -P /usr/share/nginx/html/gradle https://services.gradle.org/distributions/gradle-5.6.3-bin.zip && \ 
+    ls -lh /usr/share/nginx/html/gradle && \
     mkdir -p /usr/share/nginx/html/node && \
     wget -P /usr/share/nginx/html/node https://nodejs.org/dist/v12.18.1/node-v12.18.1-win-x64.zip && \ 
     ls -lh /usr/share/nginx/html/node && \
