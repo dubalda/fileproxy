@@ -4,6 +4,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
+    mkdir -p /usr/share/nginx/html/postman-reports && \
     mkdir -p /usr/share/nginx/html/jdk && \
     wget -P /usr/share/nginx/html/jdk https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip && \ 
     ls -lh /usr/share/nginx/html/jdk && \
