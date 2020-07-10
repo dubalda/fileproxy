@@ -36,7 +36,7 @@ RUN cat /etc/nginx/conf.d/default.conf && \
     wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-regular-400.eot && \
     wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-solid-900.eot && \
     wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-regular-400.woff && \
-    wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-regular-400.tff && \
+    wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-regular-400.ttf && \
     ls -lh /usr/share/nginx/html/webfonts && \
     mkdir -p /usr/share/nginx/html/newman-html-extra && \
     wget -P /usr/share/nginx/html/newman-html-extra https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css && \
