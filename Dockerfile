@@ -27,6 +27,11 @@ RUN cat /etc/nginx/conf.d/default.conf && \
     mkdir -p /usr/share/nginx/html/vscode && \
     wget -P /usr/share/nginx/html/vscode/ https://aka.ms/win32-x64-user-stable && \
     mv /usr/share/nginx/html/vscode/win32-x64-user-stable /usr/share/nginx/html/vscode/win32-x64-user-stable.exe && \
+    mkdir -p /usr/share/nginx/html/webfonts && \
+    wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-solid-900.ttf && \
+    wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-solid-900.woff && \
+    wget -P /usr/share/nginx/html/webfonts https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-solid-900.woff2 && \
+    ls -lh /usr/share/nginx/html/webfonts && \
     mkdir -p /usr/share/nginx/html/newman-html-extra && \
     wget -P /usr/share/nginx/html/newman-html-extra https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css && \
     wget -P /usr/share/nginx/html/newman-html-extra https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css && \
