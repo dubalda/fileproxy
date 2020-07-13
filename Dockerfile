@@ -4,6 +4,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
+    mkdir -p /usr/share/nginx/html/jmeter && \
+    wget -P /usr/share/nginx/html/jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
+    ls -lh /usr/share/nginx/html/jmeter && \
     mkdir -p /usr/share/nginx/html/activemq && \
     wget -P /usr/share/nginx/html/activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
     ls -lh /usr/share/nginx/html/activemq && \
