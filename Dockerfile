@@ -2,38 +2,37 @@ FROM nginx:1.19.1
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-RUN cat /etc/nginx/conf.d/default.conf && \
+RUN apt-get update && \
+    apt-get install -y \
+      tree \
+      wget && \
+    apt-get clean && \
+    cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
-    mkdir -p /usr/share/nginx/html/jmeter && \
-    wget -P /usr/share/nginx/html/jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
-    ls -lh /usr/share/nginx/html/jmeter && \
-    mkdir -p /usr/share/nginx/html/activemq && \
-    wget -P /usr/share/nginx/html/activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
-    ls -lh /usr/share/nginx/html/activemq && \
-    mkdir -p /usr/share/nginx/html/jdk && \
-    wget -P /usr/share/nginx/html/jdk https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip && \ 
-    wget -P /usr/share/nginx/html/jdk https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_windows-x64_bin.zip && \ 
-    wget -P /usr/share/nginx/html/jdk https://github.com/liquibase/liquibase/releases/download/v4.0.0/liquibase-4.0.0.zip && \ 
-    ls -lh /usr/share/nginx/html/jdk && \
-    mkdir -p /usr/share/nginx/html/gradle && \
-    wget -P /usr/share/nginx/html/gradle https://services.gradle.org/distributions/gradle-5.6.3-bin.zip && \ 
-    wget -P /usr/share/nginx/html/gradle https://downloads.gradle-dn.com/distributions/gradle-6.5.1-bin.zip && \ 
-    ls -lh /usr/share/nginx/html/gradle && \
-    mkdir -p /usr/share/nginx/html/node && \
-    wget -P /usr/share/nginx/html/node https://nodejs.org/dist/v12.18.1/node-v12.18.1-win-x64.zip && \ 
-    ls -lh /usr/share/nginx/html/node && \
-    mkdir -p /usr/share/nginx/html/idea && \
-    wget -P /usr/share/nginx/html/idea https://download.jetbrains.com/idea/ideaIU-2020.1.2.exe && \ 
-    wget -P /usr/share/nginx/html/idea https://plugins.jetbrains.com/files/6317/83653/lombok-plugin-0.30-2020.1.zip && \ 
-    ls -lh /usr/share/nginx/html/idea && \
-    mkdir -p /usr/share/nginx/html/node/node-sass/v4.11.0 && \
-    wget -P /usr/share/nginx/html/node/node-sass/v4.11.0 https://github.com/sass/node-sass/releases/download/v4.11.0/linux-x64-64_binding.node && \ 
-    ls -lh /usr/share/nginx/html/node/node-sass/v4.11.0 && \
-    mkdir -p /usr/share/nginx/html/node/node-sass/v4.12.0 && \
-    wget -P /usr/share/nginx/html/node/node-sass/v4.12.0 https://github.com/sass/node-sass/releases/download/v4.12.0/linux-x64-72_binding.node && \ 
-    ls -lh /usr/share/nginx/html/node/node-sass/v4.12.0 && \
-    wget -P /usr/share/nginx/html https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.7/rocketchat-setup-2.17.7.exe && \
-    mkdir -p /usr/share/nginx/html/vscode && \
-    wget -P /usr/share/nginx/html/vscode/ https://aka.ms/win32-x64-user-stable && \
-    mv /usr/share/nginx/html/vscode/win32-x64-user-stable /usr/share/nginx/html/vscode/win32-x64-user-stable.exe && \
-    ls -lh /usr/share/nginx/html
+    cd /usr/share/nginx/html/ && \
+    mkdir -p \
+      rocketchat \
+      jmeter \
+      activemq \
+      jdk \
+      gradle \
+      node/node-sass/v4.11.0 \
+      node/node-sass/v4.12.0 \
+      ide/idea \
+      ide/vscode && \
+    wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.7/rocketchat-setup-2.17.7.exe && \
+    wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
+    wget -P ./activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
+    wget -P ./jdk https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip && \ 
+    wget -P ./jdk https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_windows-x64_bin.zip && \ 
+    wget -P ./jdk https://github.com/liquibase/liquibase/releases/download/v4.0.0/liquibase-4.0.0.zip && \ 
+    wget -P ./gradle https://services.gradle.org/distributions/gradle-5.6.3-bin.zip && \ 
+    wget -P ./gradle https://downloads.gradle-dn.com/distributions/gradle-6.5.1-bin.zip && \ 
+    wget -P ./node https://nodejs.org/dist/v12.18.1/node-v12.18.1-win-x64.zip && \ 
+    wget -P ./node/node-sass/v4.11.0 https://github.com/sass/node-sass/releases/download/v4.11.0/linux-x64-64_binding.node && \ 
+    wget -P ./node/node-sass/v4.12.0 https://github.com/sass/node-sass/releases/download/v4.12.0/linux-x64-72_binding.node && \ 
+    wget -P ./ide/idea https://download.jetbrains.com/idea/ideaIU-2020.1.2.exe && \ 
+    wget -P ./ide/idea https://plugins.jetbrains.com/files/6317/83653/lombok-plugin-0.30-2020.1.zip && \ 
+    wget -P ./ide/vscode/ https://aka.ms/win32-x64-user-stable && \
+    mv ./ide/vscode/win32-x64-user-stable ./ide/vscode/win32-x64-user-stable.exe && \
+    tree /usr/share/nginx/html
