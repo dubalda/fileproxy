@@ -11,6 +11,7 @@ RUN apt-get update && \
     rm /usr/share/nginx/html/index.html && \
     cd /usr/share/nginx/html/ && \
     mkdir -p \
+      devops \
       rocketchat \
       jmeter \
       activemq \
@@ -20,6 +21,7 @@ RUN apt-get update && \
       node/node-sass/v4.12.0 \
       ide/idea \
       ide/vscode && \
+    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.21.7/k9s_Linux_x86_64.tar.gz && \  
     wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.7/rocketchat-setup-2.17.7.exe && \
     wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
     wget -P ./activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
