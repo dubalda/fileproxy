@@ -2,9 +2,11 @@ FROM nginx:1.19.1
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-RUN cd /usr/share/nginx/html/ && \
-    apt-get update && \
+RUN cd /tmp && \
     apt-get download -y --quiet git && \
+    mv git* /usr/share/nginx/html/ && \
+    cd /usr/share/nginx/html/ && \
+    apt-get update && \
     apt-get install -y --quiet --no-install-recommends install \
       tree \
       wget && \
