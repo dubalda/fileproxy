@@ -2,14 +2,15 @@ FROM nginx:1.19.1
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-RUN apt-get update && \
-    apt-get install -y \
+RUN cd /usr/share/nginx/html/ && \
+    apt-get update && \
+    apte-get download -y --quiet git && \
+    apt-get install -y --quiet --no-install-recommends install \
       tree \
       wget && \
     apt-get clean && \
     cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
-    cd /usr/share/nginx/html/ && \
     mkdir -p \
       devops \
       rocketchat \
@@ -21,8 +22,8 @@ RUN apt-get update && \
       node/node-sass/v4.12.0 \
       ide/idea \
       ide/vscode && \
-    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.21.7/k9s_Linux_x86_64.tar.gz && \  
-    wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.7/rocketchat-setup-2.17.7.exe && \
+    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.21.9/k9s_Linux_x86_64.tar.gz && \  
+    wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.11/rocketchat-setup-2.17.11.exe && \
     wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
     wget -P ./activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
     wget -P ./jdk https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip && \ 
