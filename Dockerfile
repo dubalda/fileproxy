@@ -3,14 +3,14 @@ FROM nginx:1.19.1
 COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN cd /tmp && \
+    apt-get update && \
     apt-get download -y --quiet git && \
     mv git* /usr/share/nginx/html/ && \
-    cd /usr/share/nginx/html/ && \
-    apt-get update && \
     apt-get install -y --quiet --no-install-recommends install \
       tree \
       wget && \
     apt-get clean && \
+    cd /usr/share/nginx/html/ && \
     cat /etc/nginx/conf.d/default.conf && \
     rm /usr/share/nginx/html/index.html && \
     mkdir -p \
