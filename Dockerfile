@@ -6,7 +6,7 @@ RUN cd /tmp && \
     apt-get update && \
     apt-get download -y --quiet git && \
     mv git* /usr/share/nginx/html/ && \
-    apt-get install -y --quiet --no-install-recommends install \
+    apt-get -y --quiet --no-install-recommends install \
       tree \
       wget && \
     apt-get clean && \
