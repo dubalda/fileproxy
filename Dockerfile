@@ -4,7 +4,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN cd /usr/share/nginx/html/ && \
     apt-get update && \
-    apte-get download -y --quiet git && \
+    apt-get download -y --quiet git && \
     apt-get install -y --quiet --no-install-recommends install \
       tree \
       wget && \
