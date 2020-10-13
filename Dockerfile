@@ -15,6 +15,7 @@ RUN cd /tmp && \
     rm /usr/share/nginx/html/index.html && \
     mkdir -p \
       devops \
+      git \
       rocketchat \
       jmeter \
       activemq \
@@ -24,7 +25,9 @@ RUN cd /tmp && \
       node/node-sass/v4.12.0 \
       ide/idea \
       ide/vscode && \
-    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.21.9/k9s_Linux_x86_64.tar.gz && \  
+    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.22.1/k9s_Linux_x86_64.tar.gz && \  
+    wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.28.0.windows.1/Git-2.28.0-64-bit.exe && \
+    wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.28.0.windows.1/PortableGit-2.28.0-64-bit.7z.exe && \
     wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.11/rocketchat-setup-2.17.11.exe && \
     wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
     wget -P ./activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
