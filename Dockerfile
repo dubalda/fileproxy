@@ -31,7 +31,6 @@ RUN cd /tmp && \
     wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.28.0.windows.1/PortableGit-2.28.0-64-bit.7z.exe && \
     wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.11/rocketchat-setup-2.17.11.exe && \
     wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/3.0.2/rocketchat-setup-3.0.2.exe && \
-    wget -P ./postman https://dl.pstmn.io/download/latest/win64 && \
     wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
     wget -P ./activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
     wget -P ./jdk https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip && \ 
@@ -44,6 +43,8 @@ RUN cd /tmp && \
     wget -P ./node/node-sass/v4.12.0 https://github.com/sass/node-sass/releases/download/v4.12.0/linux-x64-72_binding.node && \ 
     wget -P ./ide/idea https://download.jetbrains.com/idea/ideaIU-2020.1.2.exe && \ 
     wget -P ./ide/idea https://plugins.jetbrains.com/files/6317/83653/lombok-plugin-0.30-2020.1.zip && \ 
+    wget -P ./postman https://dl.pstmn.io/download/latest/win64 && \
+    mv ./postman/win64 ./postman/postman.exe && \
     wget -P ./ide/vscode/ https://aka.ms/win32-x64-user-stable && \
     mv ./ide/vscode/win32-x64-user-stable ./ide/vscode/win32-x64-user-stable.exe && \
     tree /usr/share/nginx/html
