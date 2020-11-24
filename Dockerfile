@@ -26,7 +26,7 @@ RUN cd /tmp && \
       node/node-sass/v4.12.0 \
       ide/idea \
       ide/vscode && \
-    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.24.0/k9s_Linux_x86_64.tar.gz && \  
+    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.24.1/k9s_Linux_x86_64.tar.gz && \  
     wget -P ./devops https://github.com/lensapp/lens/releases/download/v3.6.9/Lens-Setup-3.6.9.exe && \
     wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.2/Git-2.29.2.2-64-bit.exe && \
     wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.2/PortableGit-2.29.2.2-64-bit.7z.exe && \
