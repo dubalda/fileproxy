@@ -28,9 +28,8 @@ RUN cd /tmp && \
       ide/vscode && \
     wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.24.1/k9s_Linux_x86_64.tar.gz && \  
     wget -P ./devops https://github.com/lensapp/lens/releases/download/v3.6.9/Lens-Setup-3.6.9.exe && \
+    wget -P ./devops https://github.com/keepassxreboot/keepassxc/releases/download/2.6.2/KeePassXC-2.6.2-Win64.msi && \
     wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.2/Git-2.29.2.2-64-bit.exe && \
-    wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.2/PortableGit-2.29.2.2-64-bit.7z.exe && \
-    wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.11/rocketchat-setup-2.17.11.exe && \
     wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/3.0.6/rocketchat-setup-3.0.6.exe && \
     wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
     wget -P ./activemq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
@@ -40,9 +39,9 @@ RUN cd /tmp && \
     wget -P ./gradle https://services.gradle.org/distributions/gradle-5.6.3-bin.zip && \ 
     wget -P ./gradle https://downloads.gradle-dn.com/distributions/gradle-6.5.1-bin.zip && \ 
     wget -P ./node https://nodejs.org/dist/v12.18.1/node-v12.18.1-win-x64.zip && \ 
-    wget -P ./node/node-sass/v4.11.0 https://github.com/sass/node-sass/releases/download/v4.11.0/linux-x64-64_binding.node && \ 
-    wget -P ./node/node-sass/v4.12.0 https://github.com/sass/node-sass/releases/download/v4.12.0/linux-x64-72_binding.node && \ 
-    wget -P ./ide/idea https://download.jetbrains.com/idea/ideaIU-2020.1.2.exe && \ 
+    wget -P ./node/node-sass/v4.12.0 https://github.com/sass/node-sass/releases/download/v4.12.0/linux-x64-72_binding.node && \
+    wget -P ./ide/idea https://download.jetbrains.com/idea/ideaIC-2020.2.4.exe && \
+    wget -P ./ide/idea https://download.jetbrains.com/idea/ideaIU-2020.2.4.exe && \ 
     wget -P ./ide/idea https://plugins.jetbrains.com/files/6317/83653/lombok-plugin-0.30-2020.1.zip && \ 
     wget -P ./postman https://dl.pstmn.io/download/latest/win64 && \
     mv ./postman/win64 ./postman/postman.exe && \
