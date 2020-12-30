@@ -33,7 +33,7 @@ RUN cd /tmp && \
     wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/3.0.6/rocketchat-setup-3.0.6.exe && \
     wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
     wget -P ./mq https://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.zip && \ 
-    wget -P ./mq https://downloads.smartbear.com/readyapi/hermesJMS.zip && \ 
+    wget -P ./mq https://deac-fra.dl.sourceforge.net/project/hermesjms/hermesjms/1.14/hermes-installer-1.14.jar && \ 
     wget -P ./mq https://repo1.maven.org/maven2/com/ibm/mq/com.ibm.mq.allclient/9.2.1.0/com.ibm.mq.allclient-9.2.1.0.jar && \ 
     wget -P ./jdk https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip && \ 
     wget -P ./jdk https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_windows-x64_bin.zip && \ 
