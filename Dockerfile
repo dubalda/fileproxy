@@ -26,10 +26,11 @@ RUN cd /tmp && \
       node/node-sass/v4.12.0 \
       ide/idea \
       ide/vscode && \
-    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.24.2/k9s_Linux_x86_64.tar.gz && \  
+    wget -P ./devops https://github.com/derailed/k9s/releases/download/v0.24.15/k9s_Linux_x86_64.tar.gz && \  
     wget -P ./devops https://github.com/lensapp/lens/releases/download/v4.0.5/Lens-Setup-4.0.5.exe && \
     wget -P ./devops https://github.com/keepassxreboot/keepassxc/releases/download/2.6.6/KeePassXC-2.6.6-Win64.msi && \
     wget -P ./devops https://github.com/keepassxreboot/keepassxc/releases/download/2.6.6/KeePassXC-2.6.6-Win64-Portable.zip && \
+    wget -P ./devops https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz && \
     wget -P ./git https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.3/Git-2.29.2.3-64-bit.exe && \
     wget -P ./rocketchat https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/3.0.6/rocketchat-setup-3.0.6.exe && \
     wget -P ./jmeter https://apache-mirror.rbc.ru/pub/apache/jmeter/binaries/apache-jmeter-5.3.zip && \
